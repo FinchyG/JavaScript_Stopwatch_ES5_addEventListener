@@ -4,6 +4,8 @@ var minutes       = 0;
 var running       = 1;
 var interval;
 
+document.getElementById("start").addEventListener("click", stopwatch_start);
+
 function stopwatch_start() {
 
     running++;
@@ -38,6 +40,8 @@ function stopwatch_start() {
 
 }
 
+document.getElementById("stop").addEventListener("click", stopwatch_stop);
+
 function stopwatch_stop() {
 
     clearInterval(interval);
@@ -45,7 +49,9 @@ function stopwatch_stop() {
 
 }
 
-function reset() {
+document.getElementById("reset").addEventListener("click", stopwatch_reset);
+
+function stopwatch_reset() {
 
     var watch_display = document.getElementById("watch_display");
     watch_display.innerHTML = "00:00:00";
@@ -60,7 +66,9 @@ function reset() {
 
 }
 
-function split() {
+document.getElementById("split").addEventListener("click", stopwatch_split);
+
+function stopwatch_split() {
 
     var split_time = document.getElementById("watch_display").textContent;
     var ul         = document.getElementById("splits");
